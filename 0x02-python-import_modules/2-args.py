@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-from sys import argv
+if __name__ == "__main__":
+    from sys import argv
 for i in range(0, len(argv)):
     if len(argv) > 2:
         print("{} arguments:".format(len(argv) - 1))
