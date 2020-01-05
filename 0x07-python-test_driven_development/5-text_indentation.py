@@ -12,7 +12,7 @@ def text_indentation(text):
     """
     i = 0
 
-    if type(text) is not str:
+    if isinstance(text, str) is False:
         raise TypeError("text must be a string")
     text = text.strip()
     while i < len(text):
@@ -21,15 +21,18 @@ def text_indentation(text):
         elif text[i] is ".":
             print(text[i], end="")
             print('\n')
-            i += 1
+            if text[i] is " ":
+                i += 1
         elif text[i] is "?":
             print(text[i], end="")
             print('\n')
-            i += 1
+            if text[i] is " ":
+                i += 1
         elif text[i] is ":":
             print(text[i], end="")
             print('\n')
-            i += 1
+            if text[i] is " ":
+                i += 1
         else:
             print(text[i], end="")
         i += 1
