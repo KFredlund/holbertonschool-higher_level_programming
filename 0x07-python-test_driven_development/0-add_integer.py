@@ -2,8 +2,8 @@
 def add_integer(a, b=98):
     """ Function that adds two integers
     Args:
-        a:
-        b:
+        a: first int to add
+        b: second int to add
     Returns:
         sum of two ints
     Raises:
