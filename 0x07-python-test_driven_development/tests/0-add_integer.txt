@@ -11,6 +11,20 @@ This text file tests the 0-add_integer.py function which adds to integers, passe
 >>> add_integer(2, 5)
 7
 
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(1, -2)
+-1
+
+>>> add_integer(1.4, 2)
+3
+
+>>> add_integer(1, "2")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
 >>> add_integer(1.3, 5.2)
 6
 
