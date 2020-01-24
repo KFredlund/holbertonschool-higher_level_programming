@@ -86,15 +86,22 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format
                 (self.id, self.x, self.y, self.width, self.height))
 
-    def update(self, *args):
-        for position, arg in enumerate(args):
-            if position is 0:
-                self.id = arg
-            if position is 1:
-                self.width = arg
-            if position is 2:
-                self.height = arg
-            if position is 3:
-                self.x = arg
-            if position is 4:
-                self.y = arg
+    def update(self, *args, **kwargs):
+        if len(args) is not 0 and args is not None:
+            for position, arg in enumerate(args):
+                if position is 0:
+                    self.id = arg
+                if position is 1:
+                    self.width = arg
+                if position is 2:
+                    self.height = arg
+                if position is 3:
+                    self.x = arg
+                if position is 4:
+                    self.y = arg
+        else:
+            self.id = kwargs.get("id", self.id)
+            self.width = kwargs.get("width", self.width)
+            self.height = kwargs.get("height", self.height)
+            self.x = kwargs.get("x", self.x)
+            self.y = kwargs.get("y", self.y)
