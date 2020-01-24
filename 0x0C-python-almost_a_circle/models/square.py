@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Square class"""
 from models.rectangle import Rectangle
 
 
@@ -13,3 +14,5 @@ class Square(Rectangle):
         """String method"""
         return ("[Square] ({}) {}/{} - {}".format
                 (self.id, self.x, self.y, self.__size))
+
+
