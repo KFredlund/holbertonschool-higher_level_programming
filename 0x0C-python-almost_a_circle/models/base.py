@@ -54,4 +54,11 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """load from file method"""
-        pass
+        try:
+            with open(cls.__name__ + ".json") as f:
+                obj_list = cls.from_json_string(f.read())
+            for i, obj in enumerate(obj_list):
+                obj_list[i] = cls.create(**obj)
+        except IoError:
+            return []
+        return obj_list
