@@ -70,9 +70,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """area method"""
         return self.__width * self.__height
 
     def display(self):
+        """Display method"""
         for row in range(self.__y):
             print()
         x = (" " * self.__x)
@@ -83,10 +85,12 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """str method"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format
                 (self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
+        """Update method"""
         if len(args) is not 0 and args is not None:
             for position, arg in enumerate(args):
                 if position is 0:
