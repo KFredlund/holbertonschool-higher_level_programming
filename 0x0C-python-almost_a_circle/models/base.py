@@ -26,11 +26,32 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """save to file method"""
-        pass
+        if list_objs is None:
+            list_objs = []
+        new = []
+        for entry in list_objs:
+            new.append(cls.to_dictionary(entry))
+        with open(cls.__name__ + ".json", "w") as f:
+            f.write(cls.to_json_string(new))
 
     @staticmethod
     def from_json_string(json_string):
         """from json string method"""
-        if json_string is None:
+        if not json_string:
             return []
-        return json.dumps(json_string)
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """create method"""
+        if cls.__name__ == "Square":
+            temp = cls(1)
+        else:
+            temp = cls(1, 1)
+        temp.update(**dictionary)
+        return temp
+
+    @classmethod
+    def load_from_file(cls):
+        """load from file method"""
+        pass
