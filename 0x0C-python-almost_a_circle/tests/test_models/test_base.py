@@ -36,3 +36,6 @@ class test_base(unittest.TestCase):
         """testing for saving an id passed in"""
         test = Base(89)
         self.assertEqual(test.id, 89)
+
+if __name__ == "__main__":
+    unittest.main()
