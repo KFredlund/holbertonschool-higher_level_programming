@@ -3,4 +3,3 @@
 SELECT *
 from information_schema.columns
 WHERE table_name = 'first_table'
-ORDER BY ordinal_position;
