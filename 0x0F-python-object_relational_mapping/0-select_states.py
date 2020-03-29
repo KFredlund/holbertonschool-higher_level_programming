@@ -12,12 +12,12 @@ def print_table_states():
     db = MySQLdb.connect(
         host="localhost",
         user=sys.argv[1],
-        passwd="Bk08262012",
+        passwd=sys.argv[2],
         db=sys.argv[3]
     )
     cur = db.cursor()
     cur.execute("SELECT id, name FROM states")
-    states_list = cur.fetchmany(5)
+    states_list = cur.fetchall()
     for x in states_list:
         print(x)
 
