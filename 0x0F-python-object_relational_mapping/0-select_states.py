@@ -3,7 +3,7 @@ import MySQLdb
 db = MySQLdb.connect(
     host="localhost",
     user="user_0d_1",
-    passwd="Bk08262012",
+    passwd="",
     db="hbtn_0e_0_usa"
 )
 cur = db.cursor()
