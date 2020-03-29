@@ -18,7 +18,7 @@ def filter_table_states():
                 = cities.state_id", (state_name,))
     states_list = cur.fetchall()
     for x in states_list:
-        print(", ".join(x))
-
+        print(", ".join(x), end=', ')
+    print()
 if __name__ == '__main__':
     filter_table_states()
