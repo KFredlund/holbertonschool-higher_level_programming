@@ -14,10 +14,11 @@ def filter_table_states():
     state_name = sys.argv[4]
     cur = db.cursor()
     cur.execute("SELECT cities.name FROM states, \
-                cities WHERE states.name = %s", (state_name,))
+                cities WHERE states.name = %s and states.id \
+                = cities.state_id", (state_name,))
     states_list = cur.fetchall()
     for x in states_list:
-        print(x)
+        print(", ".join(x))
 
 if __name__ == '__main__':
     filter_table_states()
