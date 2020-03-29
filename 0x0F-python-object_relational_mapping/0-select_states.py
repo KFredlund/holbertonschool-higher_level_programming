@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 import MySQLdb
 import sys
+"""
+python3 -c 'print(__import__("my_module").my_function.__doc__)'
+python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+"""
 
 
 def print_table_states():
@@ -12,9 +16,8 @@ def print_table_states():
         db="hbtn_0e_0_usa"
     )
     cur = db.cursor()
-    cur.execute("SELECT id, name FROM states ORDER BY states.id")
-    states_list = cur.fetchall()
-
+    cur.execute("SELECT id, name FROM states")
+    states_list = cur.fetchmany(5)
     for x in states_list:
         print(x)
 
