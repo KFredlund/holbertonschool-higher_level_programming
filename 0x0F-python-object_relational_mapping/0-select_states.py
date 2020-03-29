@@ -11,9 +11,9 @@ def print_table_states():
     """ A method that prints the states from a table """
     db = MySQLdb.connect(
         host="localhost",
-        user="root",
+        user=sys.argv[1],
         passwd="Bk08262012",
-        db="hbtn_0e_0_usa"
+        db=sys.argv[3]
     )
     cur = db.cursor()
     cur.execute("SELECT id, name FROM states")
