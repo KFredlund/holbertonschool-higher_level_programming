@@ -12,7 +12,7 @@ def filter_table_states():
         db=sys.argv[3]
     )
     cur = db.cursor()
-    cur.execute("SELECT id, name FROM states
+    cur.execute("SELECT id, name FROM states \
                 WHERE name LIKE 'N%' ORDER BY states.id")
     states_list = cur.fetchall()
     for x in states_list:
